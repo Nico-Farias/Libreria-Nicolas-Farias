@@ -1,0 +1,53 @@
+.contenedorDetalles {
+    background-color: white;
+    text-align: center;
+    align-items: center;
+
+    .contenedorLibro {
+        text-align: center;
+        margin: 2rem;
+
+    }
+
+    .volverAtras {
+        text-decoration: none;
+        font-weight: 900;
+        color: green;
+
+
+    }
+
+    .generoLibro {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .imageP {
+        max-width: 250p;
+        max-height: 250px;
+        padding: 1rem;
+    }
+
+    .title {
+        height: 60px;
+
+        .titleP {
+            font-weight: bold;
+        }
+    }
+
+    .priceP {
+        color: green;
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+
+    .stockP {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+
+
+
+}

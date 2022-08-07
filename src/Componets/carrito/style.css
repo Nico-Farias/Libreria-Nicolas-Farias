@@ -1,0 +1,64 @@
+.carrito {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 2rem;
+  position: fixed;
+  top: 0rem;
+  right: 1rem;
+}
+
+.carrito .carritoImg {
+  width: 50px;
+  margin: 1rem;
+}
+
+.carrito .contadorCarrito {
+  top: 1.3rem;
+  right: 0;
+  left: 2rem;
+  bottom: 0;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: black;
+  cursor: pointer;
+}
+
+.carrito .carritoContenedor {
+  border: 2px solid black;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  width: 40rem;
+  border-radius: 2rem;
+}
+
+.carrito .carritoContenedor h2 {
+  font-weight: bold;
+}
+
+.carrito .carritoContenedor .total {
+  color: black;
+  font-weight: bold;
+}
+
+.carrito .carritoContenedor .total span {
+  color: green;
+}
+
+.carrito .cerrarCarrito {
+  text-align: right;
+  font-size: 5rem;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
