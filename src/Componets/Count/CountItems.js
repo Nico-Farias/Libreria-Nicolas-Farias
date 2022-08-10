@@ -10,12 +10,14 @@ export default function CountItems({ stock, addToCart }) {
         if (count < stock) {
             (setCount(count + 1))
 
+
         }
 
     }
     const quitar = () => {
         if (count > 1) {
             (setCount(count - 1))
+
 
         }
     }

@@ -11,7 +11,7 @@ function Navegacion() {
         <Navbar className='navegacion' bg="light" expand="lg">
             <Container>
                 <Navbar.Brand >
-                    <img className='imgLogo' src='img/NUEVO LOGO.png'></img>
+                    <img className='imgLogo' src='../img/NUEVO LOGO.png'></img>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
