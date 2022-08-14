@@ -10,7 +10,8 @@ export default function ItemsProductContainer({ productsList, Loading }) {
                 Loading ? <h2>Cargando...</h2> :
 
                     productsList.map(product =>
-                        <div className='col-3'>
+
+                        <div key={product.id} className='col-3'>
                             <Product
                                 key={product.id}
                                 id={product.id}
@@ -22,7 +23,7 @@ export default function ItemsProductContainer({ productsList, Loading }) {
                                 categorias={product.categorias}
                             >
 
-                            </Product>
+                            </Product >
 
                         </div>
 

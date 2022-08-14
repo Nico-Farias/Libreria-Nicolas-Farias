@@ -375,7 +375,7 @@ export const getData = () => {
 
         setTimeout(() => {
             res(ProductsData)
-        }, 3000)
+        }, 100)
 
     })
 }
@@ -384,7 +384,7 @@ export const getCategory = (categoryId) => {
     return new Promise((res, rej) => {
         setTimeout(() => {
             res(ProductsData.filter(product => product.categoria === categoryId))
-        }, 1000)
+        }, 100)
     })
 
 }
@@ -394,7 +394,7 @@ export const getDataId = (id) => {
         setTimeout(() => {
             res(ProductsData.find(product => product.id === id))
         })
-    }, 2000)
+    }, 100)
 
 }
 

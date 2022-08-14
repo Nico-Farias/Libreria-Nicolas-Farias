@@ -15,9 +15,9 @@ export default function Product({ id, title, price, image, stock }) {
         <div className="row" >
 
 
-            <div key={id}>
+            <div >
 
-                <div className="contenedorProduct col-3">
+                <div key={id} className="contenedorProduct col-3">
                     <img className="imageP" src={image} alt="imagenproducto"></img>
 
                     <div className="title">

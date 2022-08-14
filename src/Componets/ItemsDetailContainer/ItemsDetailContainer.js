@@ -5,7 +5,8 @@ import { useParams } from 'react-router-dom';
 import { getDataId } from './../../data/Product';
 
 export default function ItemsDetailContainer() {
-    const [product, setProduct] = useState();
+
+    const [product, setProduct] = useState({});
     const { productId } = useParams();
 
     useEffect(() => {
@@ -22,7 +23,7 @@ export default function ItemsDetailContainer() {
     return (
         <div>
 
-            <DetailsProducts {...product} />
+            <DetailsProducts product={product} />
 
         </div>
     )
