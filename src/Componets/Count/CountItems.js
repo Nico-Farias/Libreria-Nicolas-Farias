@@ -28,11 +28,12 @@ export default function CountItems({ product }) {
 
 
 
+
     return (
         <>
             <button className="btn btnQuitar" onClick={quitar}>-</button>
-            <button className="btn btnAgregar" onClick={() => { addToCart({ ...product, count }) }}  >Agregar {count} libros al carrito</button>
-            <button className="btn btnAgregar" onClick={agregar}>+</button>
+            <button id="btnCart" className="btn btnAgregar" onClick={() => { addToCart({ ...product, count }) }} >Agregar {count} libros al carrito</button>
+            <button className="btn btnAgregar" onClick={agregar} >+</button>
 
         </>
     )

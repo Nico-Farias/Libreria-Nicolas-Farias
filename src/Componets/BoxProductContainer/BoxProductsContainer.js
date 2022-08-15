@@ -23,6 +23,7 @@ export default function BoxProductsContainer() {
         } else {
             getCategory(categoryId).then((product) => {
                 setData(product)
+                    .finally(() => setLoading(false))
             })
 
         }

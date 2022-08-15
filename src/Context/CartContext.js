@@ -1,5 +1,6 @@
 import { toHaveFormValues } from "@testing-library/jest-dom/dist/matchers";
 import { createContext, useState } from "react";
+import { Link } from 'react-router-dom';
 
 export const CartContext = createContext();
 
@@ -8,10 +9,20 @@ const CartContexProvider = ({ children }) => {
   const [cart, setCart] = useState([])
   const [count, setCount] = useState([1])
 
+  function cambiarButton() {
+
+    const btnAgregar = document.getElementById("btnCart")
+    btnAgregar.textContent = "Agregado al carrito";
+    btnAgregar.disabled = true;
+
+
+  }
 
   const addToCart = (product) => {
 
     const productInCart = cart.find((productInCart) => productInCart.id === product.id)
+
+    cambiarButton();
 
     if (productInCart) {
       const newCart = cart.map((productInCart) => {
@@ -21,7 +32,10 @@ const CartContexProvider = ({ children }) => {
           return productInCart;
         }
       });
+
+
       setCart(newCart)
+
     } else {
       setCart([...cart, product])
     }
@@ -37,7 +51,6 @@ const CartContexProvider = ({ children }) => {
   const removeAll = () => {
     cart([]);
   }
-
 
 
 
