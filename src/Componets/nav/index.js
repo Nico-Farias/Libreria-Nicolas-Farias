@@ -24,17 +24,17 @@ function Navegacion() {
 
                             <ul className='categoriasLibros'>
 
-                                <li> <Link to="/category/ficcion">Ficcion</Link></li>
+                                <li> <Link to="/category/aRo21344yIBiM9aOT3Ti">Ficcion</Link></li>
 
-                                <li> <Link to="/category/poesia">Poesia</Link></li>
+                                <li> <Link to="/category/ZQq449OerKWH5eWHMtal">Poesia</Link></li>
 
-                                <li> <Link to="/category/juvenil">Juvenil</Link></li>
+                                <li> <Link to="/category/HZMNGMhStHwChAXhnYdu">Juvenil</Link></li>
 
-                                <li> <Link to="/category/infantil">Infantil</Link></li>
+                                <li> <Link to="/category/ln9SWtKPMRdd4MvGjSCJ">Infantil</Link></li>
 
-                                <li> <Link to="/category/comics">Comics</Link></li>
+                                <li> <Link to="/category/2iuVk7vKBE8o2TI7vm4j">Comics</Link></li>
 
-                                <li> <Link to="/category/historia">Historia</Link></li>
+                                <li> <Link to="/category/YQzUbe0jfDSEkakTOet7">Historia</Link></li>
                             </ul>
 
                         </NavDropdown>

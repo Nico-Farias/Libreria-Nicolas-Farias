@@ -17,7 +17,9 @@
     font-weight: bold;
     text-transform: capitalize;
 
-
+    .carritoVacio {
+        margin-top: 2rem;
+    }
 
     h2 {
         font-size: 2rem;
@@ -52,11 +54,12 @@
     }
 
     .botonesCart {
-        margin-top: 2rem;
+        margin-top: 5rem;
         display: grid;
         grid-template-columns: 40% 20% 20% 15%;
         gap: 2rem;
         text-align: left;
+
 
 
         .totalAPagar {

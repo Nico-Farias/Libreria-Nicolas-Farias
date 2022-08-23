@@ -5,6 +5,16 @@
      background-color: rgb(240, 106, 117);
      font-weight: bold;
      border: 2px outset rgb(113, 146, 35);
+     background-color: rgb(245, 107, 107);
+ }
+
+ .contador1 {
+     width: 10rem;
+     text-align: center;
+     align-items: baseline;
+     display: grid;
+     grid-template-columns: 40% 20% 40%;
+     margin: 0 auto;
  }
 
  .btnAgregar {

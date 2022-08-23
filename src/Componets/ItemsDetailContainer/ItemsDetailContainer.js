@@ -16,7 +16,7 @@ export default function ItemsDetailContainer() {
             })
             .catch(err => {
                 console.log(err)
-            }, [productId])
+            }, [])
 
     })
 

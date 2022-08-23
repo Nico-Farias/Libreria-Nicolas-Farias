@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import Navegacion from './Componets/nav';
@@ -10,9 +11,11 @@ import Cart from './Componets/carrito/Cart';
 
 
 
-
-
 function App() {
+
+
+
+
   return (
 
     <BrowserRouter>

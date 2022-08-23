@@ -16,17 +16,15 @@ export default function BoxProductsContainer() {
 
     useEffect(() => {
 
-        if (!categoryId) {
-            getData().then((productData) => setData(productData))
 
-                .finally(() => setLoading(false))
-        } else {
-            getCategory(categoryId).then((product) => {
-                setData(product)
-                    .finally(() => setLoading(false))
-            })
+        getData(categoryId)
+            .then((product) => setData(product))
 
-        }
+            .finally(() => setLoading(false))
+
+
+
+
     }, [categoryId])
 
 

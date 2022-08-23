@@ -1,18 +1,17 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import './style.scss'
 import { CartContext } from './../../Context/CartContext';
 
 
 
-export default function CountItems({ product }) {
+export default function CountItems({ initial = 1, addToC, stock = 0 }) {
 
-    const { addToCart, count, setCount } = useContext(CartContext)
-
+    const [count, setCount] = useState(0)
 
 
     const agregar = () => {
-        if (count < product.stock) {
-            (setCount(count + 1))
+        if (count < stock) {
+            setCount(count + 1);
 
 
         }
@@ -20,7 +19,7 @@ export default function CountItems({ product }) {
     }
     const quitar = () => {
         if (count > 1) {
-            (setCount(count - 1))
+            setCount(count - 1);
 
 
         }
@@ -31,10 +30,13 @@ export default function CountItems({ product }) {
 
     return (
         <>
-            <button className="btn btnQuitar" onClick={quitar}>-</button>
-            <button id="btnCart" className="btn btnAgregar" onClick={() => { addToCart({ ...product, count }) }} >Agregar {count} libros al carrito</button>
-            <button className="btn btnAgregar" onClick={agregar} >+</button>
+            <div className="contador1">
+                <button className="btn btnQuitar" onClick={quitar}>-</button>
+                <p>{count}</p>
+                <button className="btn btnAgregar" onClick={agregar} >+</button>
+            </div>
 
+            <button id="btnCart" className="btn btnAgregar" onClick={() => { addToC(count) }} >Agregar al carrito</button>
         </>
     )
 }

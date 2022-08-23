@@ -8,9 +8,8 @@ import Cart from './Cart';
 
 export default function Carrito() {
 
-    const { count, cart } = useContext(CartContext)
+    const { calcularCantidadCart } = useContext(CartContext);
 
-    const TotalItemsCarrito = cart.reduce((acc, { count }) => acc += count, 0)
 
 
     return (
@@ -21,7 +20,7 @@ export default function Carrito() {
             <Link to="/Cart" className="carritoContenedor">
 
                 <img className="carrito" src="../img/carrito.png" alt="carrito"></img>
-                <p className="contador">{TotalItemsCarrito}</p>
+                <p className="contador">{calcularCantidadCart()}</p>
 
 
             </Link>
