@@ -47,6 +47,11 @@
         border: 2px outset white;
     }
 
+    .SinStock {
+        color: red;
+        font-weight: bold;
+    }
+
     .botones {
         display: flex;
         flex-direction: column;
