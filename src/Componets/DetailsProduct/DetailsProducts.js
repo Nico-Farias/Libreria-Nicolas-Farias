@@ -7,6 +7,11 @@ import CountItems from '../Count/CountItems'
 import { useState, useContext } from 'react'
 import { CartContext } from './../../Context/CartContext';
 
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
+
 
 
 
@@ -18,7 +23,14 @@ export default function DetailsProducts({ product }) {
 
 
     const addToC = (cantidad) => {
-        alert(`Se agregaron ${cantidad} libros al carrito`)
+        MySwal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: `Se añadio ${cantidad} producto a tu carrito`,
+            showConfirmButton: false,
+            timer: 1500
+        })
+
         setItemCount(cantidad)
         addToCart(product, cantidad)
     }

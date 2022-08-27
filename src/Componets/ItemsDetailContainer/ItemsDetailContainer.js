@@ -4,6 +4,7 @@ import DetailsProducts from '../DetailsProduct/DetailsProducts'
 import { useParams } from 'react-router-dom';
 import { getDataId } from './../../data/Product';
 
+
 export default function ItemsDetailContainer() {
 
     const [product, setProduct] = useState({});
@@ -21,7 +22,7 @@ export default function ItemsDetailContainer() {
     })
 
     return (
-        <div>
+        <div className='containerDetails'>
 
             <DetailsProducts product={product} />
 

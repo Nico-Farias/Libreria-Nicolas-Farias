@@ -7,6 +7,7 @@ import BoxProductsContainer from './Componets/BoxProductContainer/BoxProductsCon
 import ItemsDetailContainer from './Componets/ItemsDetailContainer/ItemsDetailContainer';
 import CartContexProvider from './Context/CartContext';
 import Cart from './Componets/carrito/Cart';
+import { Footer } from './Componets/Footer/Footer';
 
 
 
@@ -17,26 +18,30 @@ function App() {
 
 
   return (
+    <div className='containerPrincipal'>
+      <BrowserRouter>
+        <CartContexProvider>
 
-    <BrowserRouter>
-      <CartContexProvider>
+          <Navegacion />
 
-        <Navegacion />
+          <Routes>
 
-        <Routes>
+            <Route path='/' element={<BoxProductsContainer />} />
 
-          <Route path='/' element={<BoxProductsContainer />} />
+            <Route path='/category/:categoryId' element={<BoxProductsContainer />}></Route>
 
-          <Route path='/category/:categoryId' element={<BoxProductsContainer />}></Route>
+            <Route path='/detail/:productId' element={<ItemsDetailContainer></ItemsDetailContainer>}></Route>
 
-          <Route path='/detail/:productId' element={<ItemsDetailContainer></ItemsDetailContainer>}></Route>
+            <Route path='/Cart' element={<Cart />}></Route>
 
-          <Route path='/Cart' element={<Cart />}></Route>
+          </Routes>
 
-        </Routes>
+          <Footer />
 
-      </CartContexProvider>
-    </BrowserRouter>
+        </CartContexProvider>
+      </BrowserRouter>
+
+    </div>
 
   );
 

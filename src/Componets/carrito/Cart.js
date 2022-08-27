@@ -6,6 +6,12 @@ import { doc, increment, serverTimestamp, setDoc, updateDoc } from 'firebase/fir
 import { DB } from '../../data/ApiFirestore';
 import { collection } from 'firebase/firestore';
 
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
+
+
 const Cart = () => {
 
     const { cart, removeProductCart, removeAll } = useContext(CartContext)
@@ -13,7 +19,7 @@ const Cart = () => {
 
     const Total = cart.reduce((acc, { price, cantidad }) => acc += price * cantidad, 0)
 
-
+    let timerInterval;
 
     const createOrder = () => {
 
@@ -50,12 +56,49 @@ const Cart = () => {
         }
 
         createOrderInFirestore()
-            .then(result => alert("orden creada con exito")
+            .then(result =>
+
+
+                MySwal.fire({
+                    title: 'Se esta tomando tu pedido!',
+
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading()
+                        const b = Swal.getHtmlContainer().querySelector('b')
+                        timerInterval = setInterval(() => {
+                            b.textContent = Swal.getTimerLeft()
+                        }, 100)
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval)
+                    }
+                }).then((result) => {
+                    /* Read more about handling dismissals below */
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        MySwal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Tu pedido se tomo correctamente',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        removeAll()
+                    }
+                })
+
+                /*alert("orden creada con exito")*/
             )
-            .catch(err => console.log("error al crear la orden"));
+            .catch(err => MySwal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Tu orden no pudo ser agregada',
+
+            }));
 
 
-        removeAll()
+
     }
 
 

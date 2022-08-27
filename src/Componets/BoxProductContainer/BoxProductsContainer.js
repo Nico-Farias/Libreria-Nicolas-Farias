@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { getData, getCategory } from '../../data/Product';
 import ItemsProductContainer from '../itemsProductContainer/itemsProductContainer';
 import { useParams } from 'react-router-dom'
+import './style.scss'
 
 
 export default function BoxProductsContainer() {
@@ -32,7 +33,10 @@ export default function BoxProductsContainer() {
 
 
     return (
-        <div className='container'>
+        <div className='container containerPrincipal'>
+
+            <h1 className='titulo'>Nuestros libros disponibles</h1>
+
             <ItemsProductContainer productsList={data} Loading={loading} >
 
             </ItemsProductContainer>

@@ -16,6 +16,7 @@ export const getData = async (categoryId) => {
     if (categoryId) {
         d = query(collection(DB, "Productos"), where('categoria', '==', categoryId))
     } else {
+
         d = query(collection(DB, "Productos"))
     }
 

@@ -7,7 +7,9 @@ export default function ItemsProductContainer({ productsList, Loading }) {
         <div className='contenedorItemsProduct row'>
 
             {
-                Loading ? <h2>Cargando...</h2> :
+                Loading ? <div className="hungry-4 animacionLoading">
+
+                </div> :
 
                     productsList.map(product =>
 
